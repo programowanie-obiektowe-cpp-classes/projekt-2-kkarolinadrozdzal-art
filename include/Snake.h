@@ -1,7 +1,7 @@
 #pragma once
 #include <vector>
-#include <algorithm>
 #include "Zmienne.h"
+#include<algorithm>
 
 enum class Direction : unsigned char {
     UP, DOWN, LEFT, RIGHT
@@ -25,7 +25,8 @@ public:
         if (key[SDL_SCANCODE_LEFT] && dir != Direction::RIGHT) dir = Direction::LEFT;
         if (key[SDL_SCANCODE_RIGHT] && dir != Direction::LEFT)  dir = Direction::RIGHT;
 
-        std::copy_backward(body.begin(), body.end() - 1, body.end());
+      
+         std::copy_backward(body.begin(), body.end() - 1, body.end());
 
         switch (dir) {
         case Direction::UP:    body[0].y -= KWADRAT; break;
