@@ -6,6 +6,15 @@
 #include "Zmienne.h"
 
 class Game {
+
+     SDL_Window*   window{};
+    SDL_Renderer* renderer{};
+    bool          running = true;
+    int           score   = 0;
+
+    Snake snake;
+    Food  food;
+
 public:
     Game() {
         SDL_Init(SDL_INIT_VIDEO);
@@ -29,13 +38,7 @@ public:
     }
 
 private:
-    SDL_Window* window{};
-    SDL_Renderer* renderer{};
-    bool running= true;
-    int score=0;
-
-    Snake snake;
-    Food food;
+  
 
     void events() {
         SDL_Event e;
